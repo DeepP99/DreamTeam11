@@ -2,9 +2,16 @@
 const express = require('express');
 const router = express.Router();
 
-// Players page route
-router.get('/players', (req, res) => {
-    res.render('players');
-});
+const playersCtrl = require('../controllers/players')
+
+// // Players page route
+// router.get('/players', (req, res) => {
+//     res.render('players');
+// });
+
+// GET /movies/new
+router.get('/new', playersCtrl.new);
+
+
 
 module.exports = router;

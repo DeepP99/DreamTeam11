@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 
 // Use routes
 app.use('/', indexRouter);
-app.use('/', playersRouter);
+app.use('/players', playersRouter);
 
 // Start the server
 app.listen(port, () => {
