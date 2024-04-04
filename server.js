@@ -1,22 +1,41 @@
 // Import required modules
 const express = require('express');
-require('dotenv').config()
-require('./config/database')
+const bodyParser = require('body-parser');
+require('dotenv').config();
+require('./config/database');
+
+
+// Import routes
+const indexRouter = require('./routes/index');
+const playersRouter = require('./routes/players');
 
 // Create an Express application
 const app = express();
 const port = 3000; // Define the port number
 
-// Define routes
-app.get('/', (req, res) => {
-  res.send('Welcome to the landing page! <a href="/players">Go to players</a>');
-});
+// Set EJS as view engine
+app.set('view engine', 'ejs');
+app.set('views', './views');
 
-app.get('/players', (req, res) => {
-  res.send('This is the players page');
-});
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+
+// Use routes
+app.use('/', indexRouter);
+app.use('/', playersRouter);
 
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
+
+
+
+
+
+
+
+
+
+
