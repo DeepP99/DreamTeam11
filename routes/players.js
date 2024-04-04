@@ -16,5 +16,9 @@ router.get('/', playerCtrl.getAllPlayers);
 router.get('/new', playerCtrl.newPlayerForm);
 
 
+// POST /players (to handle adding a new player)
+router.post('/', playerCtrl.addPlayer); // Define a route for adding a player
+
+
 
 module.exports = router;
