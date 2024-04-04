@@ -1,7 +1,14 @@
+
+
+
 <!-- views/players.ejs -->
 <%- include('partials/header') %>
 
 <h2>Players Page</h2>
-<!-- Add player list here if needed -->
+<ul>
+  <% players.forEach(player => { %>
+    <li><%= player.name %> - <%= player.position %></li>
+  <% }); %>
+</ul>
 
 <%- include('partials/footer') %>

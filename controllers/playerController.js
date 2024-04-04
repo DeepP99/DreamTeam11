@@ -16,7 +16,7 @@ async function getAllPlayers(req, res) {
         const players = await Player.find({});
 
         // Render the players page with the retrieved players
-        res.render('players/index', { players });
+        res.render('players', { players });
     } catch (error) {
         // Handle errors gracefully
         console.error('Error fetching players:', error);
