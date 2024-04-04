@@ -10,7 +10,7 @@ const playerCtrl = require('../controllers/playerController');
 // });
 
 // Players page route
-router.get('/', playerCtrl.getAllPlayers); // Uncomment this line
+router.get('/', playerCtrl.getAllPlayers); 
 
 // GET /players/new
 router.get('/new', playerCtrl.newPlayerForm);
