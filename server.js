@@ -1,5 +1,7 @@
 // Import required modules
 const express = require('express');
+require('dotenv').config()
+require('./config/database')
 
 // Create an Express application
 const app = express();
