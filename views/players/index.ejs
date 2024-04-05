@@ -1,11 +1,30 @@
-<!-- views/players.ejs -->
+<!-- views/players/index.ejs -->
 <%- include('../partials/header') %>
 
-<h2>Players Page</h2>
-<ul>
-  <% players.forEach(player => { %>
-    <li><%= player.name %> - <%= player.position %></li>
-  <% }); %>
-</ul>
+<h2>SQUAD SHEET</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Position</th>
+      <th>Action</th> <!-- New column for delete action -->
+    </tr>
+  </thead>
+  <tbody>
+    <% players.forEach(player => { %>
+      <tr>
+        <td><%= player.name %></td>
+        <td><%= player.position %></td>
+        <td>
+          <!-- Button/link to delete player -->
+          <form action="/players/<%= player._id %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>
 
 <%- include('../partials/footer') %>

@@ -2,6 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const logger = require('morgan')
+const methodOverride = require('method-override');
 require('dotenv').config();
 require('./config/database');
 
@@ -24,6 +25,7 @@ app.set('views', './views');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(logger('dev'));
+app.use(methodOverride('_method'));
 
 
 // Use routes
