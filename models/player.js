@@ -1,12 +1,22 @@
-// models/player.js
+// models/formation.js
 const mongoose = require('mongoose');
 
 const playerSchema = new mongoose.Schema({
-  name: String,
-  position: String,
-  // Add other player attributes as needed
+    name: {
+        type: String,
+        required: true
+    },
+    position: {
+        type: String,
+        required: true
+    },
+    description: String,
+    // You can add more fields as needed
 }, {
     timestamps: true
 });
 
-module.exports = mongoose.model('Player', playerSchema);
+const Player = mongoose.model('Player', playerSchema);
+
+module.exports = Player;
+

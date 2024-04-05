@@ -4,21 +4,16 @@ const router = express.Router();
 
 const playerCtrl = require('../controllers/playerController');
 
-// // Players page route
-// router.get('/', (req, res) => {
-//     res.render('players');
-// });
-
-// Players page route
-router.get('/', playerCtrl.getAllPlayers); 
-
 // GET /players/new
-router.get('/new', playerCtrl.newPlayerForm);
+router.get('/new', playerCtrl.new);
 
+// GET /players
+router.get('/', playerCtrl.index)
 
-// POST /players (to handle adding a new player)
-router.post('/', playerCtrl.addPlayer); // Define a route for adding a player
-
-
+// POST /players
+router.post('/', playerCtrl.create)
 
 module.exports = router;
+
+
+
