@@ -1,16 +1,26 @@
-<%- include('../partials/footer') %> 
-
-
-
 <!-- views/coaches/index.ejs -->
 <%- include('../partials/header') %>
 
 <h2>All Coaches</h2>
-<ul>
-    <% coaches.forEach(coach => { %>
-        <li><%= coach.name %> (Age: <%= coach.age %>, Nationality: <%= coach.nationality %>)</li>
-    <% }); %>
-</ul>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Nationality</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% coaches.forEach(coach => { %>
+            <tr>
+                <td><%= coach.name %></td>
+                <td><%= coach.age %></td>
+                <td><%= coach.nationality %></td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
 
 <%- include('../partials/footer') %>
+
 
