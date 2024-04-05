@@ -3,7 +3,7 @@ body {
     font-family: Anta;
     display: flex;
     justify-content: center; 
-    align-items: center; 
+    align-items: flex-start; 
     height: 100vh; 
     margin: 0;
     background-color: #000; 
