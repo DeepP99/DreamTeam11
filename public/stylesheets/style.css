@@ -10,6 +10,24 @@ body {
     color: #fff; 
 }
 
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 30px; 
+}
+
+nav ul li:last-child {
+    margin-right: 0; 
+}
+
+nav ul li a {
+    text-decoration: none;
+}
+
 a {
     color: #00B7FF;
 }
