@@ -1,18 +1,16 @@
-<!-- views/coaches/new.ejs -->
+<%- include('../partials/footer') %> 
+
+
+
+<!-- views/coaches/index.ejs -->
 <%- include('../partials/header') %>
 
-<h2>Add a New Coach</h2>
-<form action="/coaches" method="POST">
-    <label>Name:
-        <input type="text" name="name" required>
-    </label><br>
-    <label>Age:
-        <input type="number" name="age" required>
-    </label><br>
-    <label>Nationality:
-        <input type="text" name="nationality">
-    </label><br>
-    <button type="submit">Add Coach</button>
-</form>
+<h2>All Coaches</h2>
+<ul>
+    <% coaches.forEach(coach => { %>
+        <li><%= coach.name %> (Age: <%= coach.age %>, Nationality: <%= coach.nationality %>)</li>
+    <% }); %>
+</ul>
 
 <%- include('../partials/footer') %>
+

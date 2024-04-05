@@ -1,16 +1,22 @@
+
+
+
+
+
+
 <!-- views/coaches/new.ejs -->
 <%- include('../partials/header') %>
 
 <h2>Add a New Coach</h2>
 <form action="/coaches" method="POST">
     <label>Name:
-        <input type="text" name="name" required>
+        <input type="text" name="name" required autocomplete="name">
     </label><br>
     <label>Age:
-        <input type="number" name="age" required>
+        <input type="number" name="age" required autocomplete="age">
     </label><br>
     <label>Nationality:
-        <input type="text" name="nationality">
+        <input type="text" name="nationality" autocomplete="country">
     </label><br>
     <button type="submit">Add Coach</button>
 </form>
