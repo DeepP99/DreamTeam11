@@ -1,0 +1,15 @@
+<!-- views/formations/new.ejs -->
+<%- include('../partials/header') %>
+
+<h2>Create a New Formation</h2>
+<form action="/formations" method="POST">
+    <label>Name:
+        <input type="text" name="name" required>
+    </label><br>
+    <label>Description:
+        <textarea name="description" required></textarea>
+    </label><br>
+    <button type="submit">Add Formation</button>
+</form>
+
+<%- include('../partials/footer') %>

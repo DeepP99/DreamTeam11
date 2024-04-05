@@ -1,0 +1,31 @@
+<!-- views/formations/index.ejs -->
+<%- include('../partials/header') %>
+
+<h2>All Formations</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Action</th> <!-- New column for delete action -->
+    </tr>
+  </thead>
+  <tbody>
+    <% formations.forEach(formation => { %>
+      <tr>
+        <td><%= formation.name %></td>
+        <td><%= formation.description %></td>
+        <td>
+          <!-- Button/link to delete formation -->
+          <form action="/formations/<%= formation._id %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>
+
+<%- include('../partials/footer') %>
+
