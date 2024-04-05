@@ -27,6 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(logger('dev'));
 app.use(methodOverride('_method'));
+app.use(express.static('public'));
 
 
 // Use routes
