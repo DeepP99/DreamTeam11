@@ -1,6 +1,5 @@
 // // controllers/playerController.js
 const Player = require('../models/player');
-const Quality = require('../models/quality');
 
 
 
@@ -70,40 +69,12 @@ const deletePlayer = async (req, res) => {
 
 
 
-const addQuality = async (req, res) => {
-    const playerId = req.params.id;
-    const { name, rating } = req.body;
-
-    try {
-        // Find the player
-        const player = await Player.findById(playerId);
-        if (!player) {
-            return res.status(404).json({ error: 'Player not found' });
-        }
-
-        // Create a new quality
-        const newQuality = new Quality({ name, rating });
-
-        // Add the quality to the player's qualities array
-        player.qualities.push(newQuality);
-
-        // Save the player
-        await player.save();
-
-        res.status(201).json({ message: 'Quality added successfully', quality: newQuality });
-    } catch (err) {
-        console.error(err);
-        res.status(500).send({ error: 'Internal Server Error' });
-    }
-};
-
 
 module.exports = {
     new: newPlayer,
     create: create,
     index,
     deletePlayer,
-    addQuality
 }
 
 

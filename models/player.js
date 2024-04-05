@@ -1,10 +1,7 @@
 // models/player.js
 const mongoose = require('mongoose');
 
-const qualitySchema = new mongoose.Schema({
-    name: String,
-    rating: Number
-});
+
 
 const playerSchema = new mongoose.Schema({
     name: {
@@ -15,7 +12,6 @@ const playerSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    qualities: [qualitySchema] // One-to-many relationship with qualities
 }, {
     timestamps: true
 });
