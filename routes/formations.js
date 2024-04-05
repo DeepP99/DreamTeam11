@@ -7,4 +7,7 @@ router.get('/new', formationCtrl.newFormation);
 router.post('/', formationCtrl.createFormation);
 router.get('/', formationCtrl.indexFormations);
 
+// DELETE /players/:id - Delete a player
+router.post('/:id', formationCtrl.deleteFormation);
+
 module.exports = router;

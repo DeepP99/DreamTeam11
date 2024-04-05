@@ -14,7 +14,7 @@ router.get('/', playerCtrl.index)
 router.post('/', playerCtrl.create)
 
 // DELETE /players/:id - Delete a player
-router.delete('/:id', playerCtrl.deletePlayer)
+router.post('/:id', playerCtrl.deletePlayer)
 
 // POST /players/:id/qualities - Add quality to player
 router.post('/:id/qualities', playerCtrl.addQuality);

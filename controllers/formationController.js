@@ -27,8 +27,26 @@ const indexFormations = async (req, res) => {
     }
 };
 
+const deleteFormation = async (req, res) => {
+    try {
+        // Extract the formation ID from the request parameters
+        const formationId = req.params.id;
+
+        // Find the formation in the database by ID and remove it
+        await Formation.findByIdAndDelete(formationId);
+
+        // Redirect back to the all formations page
+        res.redirect('/formations');
+    } catch (err) {
+        // Handle errors
+        console.error(err);
+        res.status(500).send('Error deleting formation');
+    }
+};
+
 module.exports = {
     newFormation,
     createFormation,
-    indexFormations
+    indexFormations,
+    deleteFormation
 };
