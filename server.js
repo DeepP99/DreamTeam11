@@ -16,7 +16,7 @@ const coachesRouter = require('./routes/coaches');
 
 // Create an Express application
 const app = express();
-const port = 3000; // Define the port number
+const port = process.env.PORT || 3000; // Define the port number
 
 // Set EJS as view engine
 app.set('view engine', 'ejs');
