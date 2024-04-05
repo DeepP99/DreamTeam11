@@ -1,0 +1,18 @@
+<!-- views/coaches/new.ejs -->
+<%- include('../partials/header') %>
+
+<h2>Add a New Coach</h2>
+<form action="/coaches" method="POST">
+    <label>Name:
+        <input type="text" name="name" required>
+    </label><br>
+    <label>Age:
+        <input type="number" name="age" required>
+    </label><br>
+    <label>Nationality:
+        <input type="text" name="nationality">
+    </label><br>
+    <button type="submit">Add Coach</button>
+</form>
+
+<%- include('../partials/footer') %>

@@ -12,6 +12,7 @@ require('./config/database');
 const indexRouter = require('./routes/index');
 const playersRouter = require('./routes/players');
 const formationsRouter = require('./routes/formations');
+const coachesRouter = require('./routes/coaches'); 
 
 // Create an Express application
 const app = express();
@@ -31,7 +32,8 @@ app.use(methodOverride('_method'));
 // Use routes
 app.use('/', indexRouter);
 app.use('/players', playersRouter);
-app.use('/formations', formationsRouter); // Use formations router
+app.use('/formations', formationsRouter); 
+app.use('/coaches', coachesRouter);
 
 
 // Error handling middleware
