@@ -49,6 +49,22 @@ const index = async (req, res) => {
 }
 
 
+
+
+// const showPlayer = async (req, res) => {
+//     try {
+//         const playerId = req.params.id;
+//         const player = await Player.findById(playerId);
+//         if (!player) {
+//             return res.status(404).send('Player not found');
+//         }
+//         res.render('players/show', { player });
+//     } catch (err) {
+//         console.error(err);
+//         res.status(500).send('Error fetching player details');
+//     }
+// };
+
 const deletePlayer = async (req, res) => {
     try {
         // Extract the player ID from the request parameters
@@ -70,11 +86,14 @@ const deletePlayer = async (req, res) => {
 
 
 
+
+
 module.exports = {
     new: newPlayer,
     create: create,
     index,
-    deletePlayer,
+    // showPlayer,
+    deletePlayer
 }
 
 

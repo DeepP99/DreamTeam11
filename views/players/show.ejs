@@ -36,3 +36,22 @@
 </form>
 
 <%- include('../partials/footer') %> -->
+
+
+
+
+
+<!-- views/players/show.ejs -->
+
+
+<%- include('../partials/header') %>
+
+<h2>Player Details</h2>
+<div>
+    <p><strong>Name:</strong> <%= player.name %></p>
+    <p><strong>Position:</strong> <%= player.position %></p>
+    <!-- Add more details here as needed -->
+</div>
+<a href="/players">Back to Squad Sheet</a>
+
+<%- include('../partials/footer') %>
