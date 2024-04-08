@@ -23,7 +23,7 @@
 // module.exports = router;
 
 
-
+// routes/players.js
 const express = require('express');
 const router = express.Router();
 
@@ -37,9 +37,6 @@ router.post('/', playerCtrl.create);
 
 // DELETE /players/:id - Delete a player
 router.delete('/:id', playerCtrl.deletePlayer);
-
-// // GET /players/:id - Show player details
-// router.get('/:id', playerCtrl.showPlayer);
 
 // GET /players
 router.get('/', playerCtrl.index);

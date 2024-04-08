@@ -1,12 +1,10 @@
-// // controllers/playerController.js
+// controllers/playerController.js
+
 const Player = require('../models/player');
-
-
 
 const newPlayer = (req, res) => {
     res.render('players/new', { errorMsg: "" })
 }
-
 
 const create = async (req, res) => {
     try {
@@ -38,7 +36,6 @@ const create = async (req, res) => {
     }
 }
 
-
 const index = async (req, res) => {
     try {
         const player = await Player.find({})
@@ -47,23 +44,6 @@ const index = async (req, res) => {
         console.log(err)
     }
 }
-
-
-
-
-// const showPlayer = async (req, res) => {
-//     try {
-//         const playerId = req.params.id;
-//         const player = await Player.findById(playerId);
-//         if (!player) {
-//             return res.status(404).send('Player not found');
-//         }
-//         res.render('players/show', { player });
-//     } catch (err) {
-//         console.error(err);
-//         res.status(500).send('Error fetching player details');
-//     }
-// };
 
 const deletePlayer = async (req, res) => {
     try {
@@ -83,18 +63,13 @@ const deletePlayer = async (req, res) => {
     }
 };
 
-
-
-
-
-
 module.exports = {
     new: newPlayer,
     create: create,
     index,
-    // showPlayer,
     deletePlayer
 }
+
 
 
 

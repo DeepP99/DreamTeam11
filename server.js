@@ -16,6 +16,7 @@ const indexRouter = require('./routes/index');
 const playersRouter = require('./routes/players');
 const formationsRouter = require('./routes/formations');
 const coachesRouter = require('./routes/coaches'); 
+// const qualitiesRouter = require('./routes/qualities'); // Import quality routes
 
 // Create an Express application
 const app = express();
@@ -38,6 +39,7 @@ app.use('/', indexRouter);
 app.use('/players', playersRouter);
 app.use('/formations', formationsRouter); 
 app.use('/coaches', coachesRouter);
+// app.use('/qualities', qualitiesRouter); // Use quality routes
 
 
 // Error handling middleware
